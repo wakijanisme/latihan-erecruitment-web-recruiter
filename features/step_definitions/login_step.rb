@@ -29,5 +29,34 @@ end
 
 Then('Show Pre-Screening Question Master Inquiry') do
   find(:xpath, "//label[@name='label1' and contains(text(),'Pre-Screening Question Master')]").should be_visible
-  sleep 2
+  sleep 1
+end
+
+When ('Click Create A Question button') do
+  find(:xpath,"//span[@class='btn-caption' and contains(text(),'Create A Question')]").click
+  sleep 1
+end
+
+When ('Select Category') do
+  find(:xpath,"//select[@name='categoryId_formWidget']").click
+  sleep 1
+  find(:xpath,"//option[@value='4: 2' and contains(text(), 'Developmental Program')]").click
+  sleep 1
+end
+
+When ('Select Type = text') do
+  find(:xpath,"//select[@name='type_formWidget']").click
+  sleep 1
+  find(:xpath,"//option[contains(text(), 'Text')]").click
+  sleep 1
+end
+
+When ('Insert Question') do
+  find(:xpath,"//textarea[@name='question_formWidget']").click
+  find(:xpath,"//textarea[@name='question_formWidget']").set('Test automation 1')
+  sleep 1
+end
+
+When ('Click Save Button') do
+  find(:xpath,"//span[@class='btn-caption' and contains(text(), 'Save')]").click
 end
