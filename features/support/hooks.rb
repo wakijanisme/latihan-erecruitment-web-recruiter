@@ -7,7 +7,7 @@ After do |scenario|
 end
 
 AfterStep do |scenario|
-  # sleep 2
+  sleep 2
   # take_screenshot
 end
 
